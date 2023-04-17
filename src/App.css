@@ -1,4 +1,28 @@
+.review-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.nav-bar {
+  background-color: #642da8;
+}
+
+.small-review-card {
+  background-color: #e6e0e5;
+  width: 40vw;
+  align-items: center;
+  margin: 2vw;
+  padding: 2%;
+}
+
+.small-review-image {
+  width: 80%;
+  margin: 20px;
+}
+
 .App {
+  background-color: #151321;
   text-align: center;
 }
 
@@ -14,7 +38,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #63648a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
