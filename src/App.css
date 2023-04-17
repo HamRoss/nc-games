@@ -4,8 +4,58 @@
   flex-wrap: wrap;
 }
 
+.nav-bar-box {
+  color: #e6e0e5;
+  background-color: #642da8;
+  display: flex;
+  height: 90%;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  font-size: x-large;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul a {
+  display: block;
+  background-color: #e6e0e5;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #e6e0e5;
+}
+
+.nav-bar-box a {
+  text-decoration: none;
+}
+
+.nav-bar {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  height: 500px;
+}
+
+h2 {
+  color: #e6e0e5;
+}
+
 .nav-bar {
   background-color: #642da8;
+}
+
+h3 {
+  color: #642da8;
 }
 
 .small-review-card {
@@ -46,6 +96,13 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.loading-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  color: #e6e0e5;
 }
 
 .App-link {
