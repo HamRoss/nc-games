@@ -1,9 +1,15 @@
+import { Link } from "react-router-dom";
+
 function Nav() {
   // https://reactrouter.com/en/main/components/nav-link
 
   return (
     <nav className="nav-bar">
-      <h2>Nav bar || Home || Reviews || Categories</h2>
+      <ul>
+        <Link to="/reviews">
+          <li className="nav-bar-box">Reviews</li>
+        </Link>
+      </ul>
     </nav>
   );
 }

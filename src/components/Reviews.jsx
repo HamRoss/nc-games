@@ -4,12 +4,14 @@ import { fetchReviews } from "../api";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchReviews().then((reviews) => {
       setReviews(reviews);
+      setIsLoading(false);
     });
-  }, []);
+  }, [isLoading]);
 
   return (
     <section>
@@ -18,6 +20,7 @@ function Reviews() {
         className="review-container"
         reviews={reviews}
         setReviews={setReviews}
+        isLoading={isLoading}
       />
     </section>
   );
