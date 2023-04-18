@@ -1,3 +1,8 @@
+.large-votes-comments {
+  color: #642da8;
+  font-size: 35px;
+}
+
 .author-name {
   margin-block-start: 3px;
   margin-block-end: 5px;
@@ -12,7 +17,12 @@
 
 .review-title {
   margin-block-end: 3px;
-  }
+}
+
+.icon {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
 
 .large-review-card {
   background-color: #e6e0e5;
@@ -22,6 +32,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto auto auto auto;
   gap: 2px;
+  border-radius: 10px;
 }
 
 .div1 {
@@ -52,6 +63,7 @@
 .div5 {
   grid-row: 5;
   grid-column: 1;
+  padding: 15px;
 }
 
 .div6 {
