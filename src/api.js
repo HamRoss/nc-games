@@ -13,3 +13,8 @@ export const fetchReview = async (review_id) => {
   const response = await gamesApi.get(`/reviews/${review_id}`);
   return response.data.review;
 };
+
+export const fetchComments = async (review_id) => {
+  const response = await gamesApi.get(`/reviews/${review_id}/comments`);
+  return response.data.comments;
+};
