@@ -6,7 +6,7 @@ function SingleComment({ comment }) {
       <p>{body}</p>
       <h3>{author}</h3>
       <p>
-        Votes: {votes} Submitted: {Date(created_at)}
+        Votes: {votes} Submitted: {Date(created_at).slice(3, 21)}
       </p>
     </section>
   );
