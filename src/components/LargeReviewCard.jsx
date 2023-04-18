@@ -1,3 +1,6 @@
+import CommentIcon from "@mui/icons-material/Comment";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+
 function LargeReviewCard({ review }) {
   const {
     title,
@@ -14,8 +17,8 @@ function LargeReviewCard({ review }) {
   return (
     <div className="large-review-card">
       <div className="div1">
-        <h3>{title}</h3>
-        <p>{owner}</p>
+        <h3 className="review-title">{title}</h3>
+        <p className="author-name">{owner}</p>
       </div>
       <div className="div2">
         <img
@@ -23,22 +26,25 @@ function LargeReviewCard({ review }) {
           alt={`${owner}'s review of ${category} game`}
         />
       </div>
-      <div className="div3">
-        <p>Votes: {votes}</p>
+      <div className="div6">
+        <p className="large-votes-comments">
+          <ThumbUpIcon className="icon" fontSize="large" /> {` ${votes}`}
+        </p>
       </div>
-      <div className="div4">
-        <p>Comments: {comment_count}</p>
+      <div className="div7">
+        <p className="large-votes-comments">
+          <CommentIcon className="icon" fontSize="large" />
+          {` ${comment_count}`}
+        </p>
       </div>
       <div className="div5">
         <p>{review_body}</p>
       </div>
-      <div className="div6">
-        <p>Game designer:</p>
-        <p>{designer}</p>
+      <div className="div3">
+        <p>Game designer: {designer}</p>
       </div>
-      <div className="div7">
-        <p>Date created:</p>
-        <p>{created_at}</p>
+      <div className="div4">
+        <p>{Date(created_at).slice(3, 15)}</p>
       </div>
     </div>
   );

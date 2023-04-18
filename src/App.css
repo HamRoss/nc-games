@@ -1,3 +1,6 @@
+.large-votes-comments {
+  color: #642da8;
+  font-size: 35px;
 .comment-container {
   display: flex;
   flex-direction: column;
@@ -28,6 +31,11 @@
   margin-block-end: 3px;
 }
 
+.icon {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
 .large-review-card {
   background-color: #e6e0e5;
   width: 90vw;
@@ -36,6 +44,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto auto auto auto;
   gap: 2px;
+  border-radius: 10px;
 }
 
 .div1 {
@@ -66,6 +75,7 @@
 .div5 {
   grid-row: 5;
   grid-column: 1;
+  padding: 15px;
 }
 
 .div6 {
