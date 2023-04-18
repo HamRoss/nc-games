@@ -1,3 +1,6 @@
+import CommentIcon from "@mui/icons-material/Comment";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+
 function SmallReviewCard({ review }) {
   console.log(review);
   return (
@@ -7,10 +10,13 @@ function SmallReviewCard({ review }) {
         src={review.review_img_url}
         alt={`${review.owner}'s review of a ${review.category} game`}
       ></img>
-      <h3>{review.title}</h3>
-      <p className="author-name">Author: {review.owner}</p>
+      <h3 className="review-title">{review.title}</h3>
+      <p className="author-name">{review.owner}</p>
       <p className="votes-and-comments">
-        Votes: {review.votes} Comments: {review.comment_count}{" "}
+        <ThumbUpIcon fontSize="x-small" /> {` ${review.votes}`}
+        {`   `}
+        <CommentIcon fontSize="x-small" />
+        {` ${review.comment_count}`}
       </p>
     </div>
   );

@@ -1,7 +1,24 @@
+.author-name {
+  margin-block-start: 3px;
+  margin-block-end: 5px;
+  color: #151321;
+  font-weight: bold;
+}
+
+.votes-and-comments {
+  color: #151321;
+  font-weight: 400;
+}
+
+.review-title {
+  margin-block-end: 3px;
+}
+
 .review-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-bar-box {
@@ -55,20 +72,26 @@ h2 {
 }
 
 h3 {
+  font-size: 21px;
   color: #642da8;
 }
 
 .small-review-card {
+  display: flex;
+  flex-direction: column;
   background-color: #e6e0e5;
   width: 40vw;
   align-items: center;
-  margin: 2vw;
   padding: 2%;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 .small-review-image {
-  width: 80%;
+  width: 90%;
   margin: 20px;
+  border: 2px solid #151321;
+  border-radius: 10px;
 }
 
 .App {
