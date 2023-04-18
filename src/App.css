@@ -1,6 +1,18 @@
 .large-votes-comments {
   color: #642da8;
   font-size: 35px;
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90vw;
+  margin-top: 50px;
+}
+
+.single-comment {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #e6e0e5;
 }
 
 .author-name {
@@ -118,42 +130,6 @@
   }
 }
 
-/* .large-review-card {
-  background-color: #e6e0e5;
-  width: 80vw;
-  padding: 4%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  /* display: grid;
-  grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
-  grid-template-rows: 0.5fr 1fr 0.5fr repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px; */
-
-/* 
-.div1 {
-  grid-area: 2 / 2 / 3 / 4;
-}
-.div2 {
-  grid-area: 2 / 4 / 5 / 6;
-}
-.div3 {
-  grid-area: 3 / 2 / 4 / 3;
-}
-.div4 {
-  grid-area: 3 / 3 / 4 / 4;
-}
-.div5 {
-  grid-area: 4 / 2 / 7 / 4;
-}
-.div6 {
-  grid-area: 5 / 4 / 6 / 5;
-}
-.div7 {
-  grid-area: 5 / 5 / 6 / 6;
-} */
-
 .single-review-container {
   display: flex;
   justify-content: center;
@@ -217,6 +193,10 @@ h3 {
   color: #642da8;
 }
 
+h4 {
+  color: #e6e0e5;
+}
+
 .small-review-card {
   display: flex;
   flex-direction: column;
@@ -224,7 +204,8 @@ h3 {
   width: 40vw;
   align-items: center;
   padding: 2%;
-  margin: 10px;
+  margin: 20px;
+
   border-radius: 10px;
 }
 
