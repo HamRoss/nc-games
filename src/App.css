@@ -183,6 +183,10 @@ h3 {
   color: #642da8;
 }
 
+h4 {
+  color: #e6e0e5;
+}
+
 .small-review-card {
   display: flex;
   flex-direction: column;

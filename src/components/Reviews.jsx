@@ -1,6 +1,6 @@
 import ReviewContainer from "./ReviewContainer";
 import { useState, useEffect } from "react";
-import { fetchReviews } from "../api";
+import { fetchReviews } from "../utils/api";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);

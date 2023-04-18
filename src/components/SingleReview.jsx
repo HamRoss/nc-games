@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { fetchReview, fetchComments } from "../api";
+import { fetchReviewById, fetchCommentsById } from "../utils/api";
 import LargeReviewCard from "./LargeReviewCard";
 import { CircularProgress } from "@mui/material";
 import CommentContainer from "./CommentContainer";
@@ -10,17 +10,19 @@ function SingleReview() {
   const [review, setReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [comments, setComments] = useState([]);
+  const [commentsLoading, setCommentsLoading] = useState(true);
 
   useEffect(() => {
-    fetchReview(review_id).then((review) => {
+    fetchReviewById(review_id).then((review) => {
       setReview(review);
       setIsLoading(false);
     });
   }, [review_id, isLoading]);
 
   useEffect(() => {
-    fetchComments(review_id).then((comments) => {
+    fetchCommentsById(review_id).then((comments) => {
       setComments(comments);
+      setCommentsLoading(false);
     });
   }, [review_id]);
 
@@ -35,7 +37,10 @@ function SingleReview() {
       ) : (
         <div>
           <LargeReviewCard review={review} />
-          <CommentContainer comments={comments} />
+          <CommentContainer
+            commentsLoading={commentsLoading}
+            comments={comments}
+          />
         </div>
       )}
     </section>
