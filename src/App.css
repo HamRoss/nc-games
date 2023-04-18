@@ -1,6 +1,7 @@
 .large-votes-comments {
   color: #642da8;
   font-size: 35px;
+}
 .comment-container {
   display: flex;
   flex-direction: column;
