@@ -2,7 +2,6 @@ import CommentIcon from "@mui/icons-material/Comment";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
 function SmallReviewCard({ review }) {
-  console.log(review);
   return (
     <div className="small-review-card" key={review.review_id}>
       <img
