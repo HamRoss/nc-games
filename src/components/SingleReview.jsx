@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchReview } from "../api";
 import LargeReviewCard from "./LargeReviewCard";
+import { CircularProgress } from "@mui/material";
 
 function SingleReview() {
   const { review_id } = useParams();
@@ -17,7 +18,13 @@ function SingleReview() {
 
   return (
     <section className="single-review-container">
-      <LargeReviewCard review={review} />
+      {isLoading ? (
+        <div className="loading-container">
+          <CircularProgress color="inherit" />
+        </div>
+      ) : (
+        <LargeReviewCard review={review} />
+      )}
     </section>
   );
 }
