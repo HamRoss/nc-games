@@ -1,5 +1,6 @@
 import SmallReviewCard from "./SmallReviewCard";
 import CircularProgress from "@mui/material/CircularProgress";
+import { Link } from "react-router-dom";
 
 function ReviewContainer({ reviews, setReviews, isLoading }) {
   return (
@@ -9,7 +10,11 @@ function ReviewContainer({ reviews, setReviews, isLoading }) {
       </div>
 
       {reviews.map((review) => {
-        return <SmallReviewCard review={review} />;
+        return (
+          <Link to={`/reviews/${review.review_id}`}>
+            <SmallReviewCard review={review} />
+          </Link>
+        );
       })}
     </section>
   );
