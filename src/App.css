@@ -12,6 +12,139 @@
 
 .review-title {
   margin-block-end: 3px;
+  }
+
+.large-review-card {
+  background-color: #e6e0e5;
+  width: 90vw;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto auto auto;
+  gap: 2px;
+}
+
+.div1 {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.div2 {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.div2 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.div3 {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.div4 {
+  grid-row: 4;
+  grid-column: 1;
+}
+
+.div5 {
+  grid-row: 5;
+  grid-column: 1;
+}
+
+.div6 {
+  grid-row: 6;
+  grid-column: 1;
+}
+
+.div7 {
+  grid-row: 7;
+  grid-column: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .large-review-card {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto 1fr auto auto;
+  }
+
+  .div1 {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+  }
+
+  .div2 {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+  }
+
+  .div3 {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  .div4 {
+    grid-row: 3;
+    grid-column: 2;
+  }
+
+  .div5 {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+  }
+
+  .div6 {
+    grid-row: 5;
+    grid-column: 1;
+  }
+
+  .div7 {
+    grid-row: 5;
+    grid-column: 2;
+  }
+}
+
+/* .large-review-card {
+  background-color: #e6e0e5;
+  width: 80vw;
+  padding: 4%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; */
+
+/* 
+.div1 {
+  grid-area: 2 / 2 / 3 / 4;
+}
+.div2 {
+  grid-area: 2 / 4 / 5 / 6;
+}
+.div3 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.div4 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+.div5 {
+  grid-area: 4 / 2 / 7 / 4;
+}
+.div6 {
+  grid-area: 5 / 4 / 6 / 5;
+}
+.div7 {
+  grid-area: 5 / 5 / 6 / 6;
+} */
+
+.single-review-container {
+  display: flex;
+  justify-content: center;
 }
 
 .review-container {
@@ -42,10 +175,6 @@ ul a {
   display: block;
   background-color: #e6e0e5;
   text-decoration: none;
-}
-
-li a.active {
-  background-color: #e6e0e5;
 }
 
 .nav-bar-box a {
@@ -122,6 +251,7 @@ h3 {
 }
 
 .loading-container {
+  margin-top: 10px;
   width: 100vw;
   display: flex;
   justify-content: center;
