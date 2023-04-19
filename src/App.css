@@ -1,3 +1,9 @@
+.comment-button {
+  color: #e6e0e5;
+  background-color: #642da8;
+  font-size: 35px;
+}
+
 .large-votes-comments {
   color: #642da8;
   font-size: 35px;
@@ -69,6 +75,8 @@
   margin-inline: 5%;
 }
 .div6 {
+  text-align: left;
+
   grid-area: 4 / 9 / auto / 13;
   margin-inline: 5%;
 }
@@ -87,6 +95,11 @@
 .div2 img {
   max-width: 100%;
   height: auto;
+}
+.div3 p {
+  margin-inline: 5%;
+  text-align: left;
+  max-width: 1024px;
 }
 /* 
 @media screen and (min-width: 768px) {
@@ -197,7 +210,7 @@ h3 {
 h4 {
   color: #642da8;
   margin-block-start: 0.7em;
-  margin-block-end: 0.7em;
+  margin-block-end: 0px;
 }
 
 .small-review-card {
@@ -273,13 +286,30 @@ button {
   align-items: center;
   all: unset;
   cursor: pointer;
-  background-color: #828baa;
-  height: 136px;
-  width: 408px;
+  background-color: #e6e0e5;
+  border: solid #642da8;
+  height: 110px;
+  width: 85%;
   border-radius: 10px;
   margin: 10px;
 }
 
+.votes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 112.5px;
+  width: 95%;
+  border-radius: 10px;
+  margin: 10px;
+  color: #e6e0e5;
+  font-size: 25px;
+}
+
 button:focus {
   outline: #151321 5px auto;
+}
+button:disabled {
+  background-color: #63648a;
 }
