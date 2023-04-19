@@ -7,27 +7,49 @@ import { useState } from "react";
 function LargeReviewCard({ review, setReview }) {
   const [error, setError] = useState("");
   const [extraVotes, setExtraVotes] = useState(0);
+  const [upvoteClicked, setUpvoteClicked] = useState(false);
+  const [downvoteClicked, setDownvoteClicked] = useState(false);
 
   const handleUpVote = () => {
+    setUpvoteClicked(true);
     setExtraVotes(1);
 
-    patchReviewById(review_id, 1)
-      .then(() => {})
-      .catch(() => {
-        setError("Something went wrong, please try again later");
-        setExtraVotes(-1);
-      });
+    if (downvoteClicked) {
+      patchReviewById(review_id, 2)
+        .then(() => {})
+        .catch(() => {
+          setError("Something went wrong, please try again later");
+          setExtraVotes(-1);
+        });
+    } else {
+      patchReviewById(review_id, 1)
+        .then(() => {})
+        .catch(() => {
+          setError("Something went wrong, please try again later");
+          setExtraVotes(-1);
+        });
+    }
   };
 
   const handleDownVote = () => {
+    setDownvoteClicked(true);
     setExtraVotes(-1);
 
-    patchReviewById(review_id, -1)
-      .then(() => {})
-      .catch(() => {
-        setError("Something went wrong, please try again later");
-        setExtraVotes(1);
-      });
+    if (upvoteClicked) {
+      patchReviewById(review_id, -2)
+        .then(() => {})
+        .catch(() => {
+          setError("Something went wrong, please try again later");
+          setExtraVotes(1);
+        });
+    } else {
+      patchReviewById(review_id, -1)
+        .then(() => {})
+        .catch(() => {
+          setError("Something went wrong, please try again later");
+          setExtraVotes(1);
+        });
+    }
   };
 
   const {
@@ -58,8 +80,7 @@ function LargeReviewCard({ review, setReview }) {
       <div className="div6">
         <button onClick={handleUpVote}>
           <p className="large-votes-comments">
-            <ThumbUpIcon className="icon" fontSize="large" />{" "}
-            {` ${votes + extraVotes}`}
+            <ThumbUpIcon className="icon" fontSize="large" />
           </p>
         </button>
       </div>
@@ -71,6 +92,7 @@ function LargeReviewCard({ review, setReview }) {
       </div>
       <div className="div5">
         <p>{review_body}</p>
+        <p>Votes: {votes + extraVotes}</p>
       </div>
       <div className="div3">
         <p>Game designer: {designer}</p>
@@ -81,8 +103,7 @@ function LargeReviewCard({ review, setReview }) {
       <div>
         <button onClick={handleDownVote}>
           <p className="large-votes-comments">
-            <ThumbDownIcon className="icon" fontSize="large" />{" "}
-            {` ${votes + extraVotes}`}
+            <ThumbDownIcon className="icon" fontSize="large" />
           </p>
         </button>
       </div>
