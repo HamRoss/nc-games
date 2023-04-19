@@ -264,3 +264,20 @@ h4 {
     transform: rotate(360deg);
   }
 }
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  all: unset;
+  cursor: pointer;
+  background-color: #828baa;
+  height: 136px;
+  width: 408px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+button:focus {
+  outline: #151321 5px auto;
+}

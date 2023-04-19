@@ -26,8 +26,6 @@ function SingleReview() {
     });
   }, [review_id]);
 
-  console.log(comments);
-
   return (
     <section className="single-review-container">
       {isLoading ? (
@@ -36,7 +34,7 @@ function SingleReview() {
         </div>
       ) : (
         <div>
-          <LargeReviewCard review={review} />
+          <LargeReviewCard review={review} setReview={setReview} />
           <CommentContainer
             commentsLoading={commentsLoading}
             comments={comments}
