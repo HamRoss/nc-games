@@ -4,7 +4,7 @@ import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import { patchReviewById } from "../utils/api";
 import { useState } from "react";
 
-function LargeReviewCard({ review, setReview }) {
+function LargeReviewCard({ review, setReview, additionalCommentCount }) {
   const [error, setError] = useState("");
   const [extraVotes, setExtraVotes] = useState(0);
   const [upvoteClicked, setUpvoteClicked] = useState(false);
@@ -64,6 +64,17 @@ function LargeReviewCard({ review, setReview }) {
     review_id,
   } = review;
 
+  const dateString = created_at;
+  const date = new Date(dateString);
+
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+
+  const formattedDate = date.toLocaleDateString("en-US", options);
+
   return (
     <div className="large-review-card">
       <div className="div1">
@@ -88,7 +99,7 @@ function LargeReviewCard({ review, setReview }) {
         <button className="comment-button">
           <p className="comment-button">
             <CommentIcon className="icon" fontSize="large" />
-            {` ${comment_count}`}
+            {` ${comment_count + additionalCommentCount}`}
           </p>
         </button>
       </div>
@@ -102,7 +113,7 @@ function LargeReviewCard({ review, setReview }) {
       </div>
       <div className="div6">
         <h4>Submitted:</h4>
-        <p>{Date(created_at).slice(3, 15)}</p>
+        <p>{formattedDate}</p>
       </div>
       <div className="div7">
         <div className="votes">

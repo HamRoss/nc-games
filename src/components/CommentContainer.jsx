@@ -1,7 +1,14 @@
 import SingleComment from "./SingleComment";
 import { CircularProgress } from "@mui/material";
+import AddComment from "./AddComment";
 
-function CommentContainer({ commentsLoading, comments }) {
+function CommentContainer({
+  commentsLoading,
+  comments,
+  user,
+  setComments,
+  setAdditionalCommentCount,
+}) {
   return (
     <section className="comment-container">
       <h2>Comments</h2>
@@ -11,9 +18,16 @@ function CommentContainer({ commentsLoading, comments }) {
           <CircularProgress color="inherit" />
         </div>
       ) : (
-        comments.map((comment) => {
-          return <SingleComment key={comment.comment_id} comment={comment} />;
-        })
+        <div>
+          <AddComment
+            user={user}
+            setComments={setComments}
+            setAdditionalCommentCount={setAdditionalCommentCount}
+          />
+          {comments.map((comment) => {
+            return <SingleComment key={comment.comment_id} comment={comment} />;
+          })}
+        </div>
       )}
       {comments.length ? null : <h4>Be the first to leave a comment</h4>}
     </section>

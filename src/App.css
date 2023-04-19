@@ -1,3 +1,14 @@
+.avatar {
+  width: 5%;
+  height: auto;
+}
+
+.add-comment {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #e6e0e5;
+}
+
 .comment-button {
   color: #e6e0e5;
   background-color: #642da8;
