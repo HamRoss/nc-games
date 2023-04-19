@@ -13,7 +13,6 @@ function LargeReviewCard({ review, setReview }) {
   const handleUpVote = () => {
     setUpvoteClicked(true);
     setExtraVotes(1);
-
     if (downvoteClicked) {
       patchReviewById(review_id, 2)
         .then(() => {})
@@ -32,8 +31,8 @@ function LargeReviewCard({ review, setReview }) {
   };
 
   const handleDownVote = () => {
-    setDownvoteClicked(true);
     setExtraVotes(-1);
+    setDownvoteClicked(true);
 
     if (upvoteClicked) {
       patchReviewById(review_id, -2)
@@ -78,7 +77,7 @@ function LargeReviewCard({ review, setReview }) {
         />
       </div>
       <div className="div6">
-        <button onClick={handleUpVote}>
+        <button disabled={upvoteClicked} onClick={handleUpVote}>
           <p className="large-votes-comments">
             <ThumbUpIcon className="icon" fontSize="large" />
           </p>
@@ -101,7 +100,7 @@ function LargeReviewCard({ review, setReview }) {
         <p>{Date(created_at).slice(3, 15)}</p>
       </div>
       <div>
-        <button onClick={handleDownVote}>
+        <button disabled={downvoteClicked} onClick={handleDownVote}>
           <p className="large-votes-comments">
             <ThumbDownIcon className="icon" fontSize="large" />
           </p>
