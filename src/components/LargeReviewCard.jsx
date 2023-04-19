@@ -76,27 +76,33 @@ function LargeReviewCard({ review, setReview }) {
           alt={`${owner}'s review of ${category} game`}
         />
       </div>
-      <div className="div6">
+
+
+      <div className="div8">
         <button disabled={upvoteClicked} onClick={handleUpVote}>
           <p className="large-votes-comments">
             <ThumbUpIcon className="icon" fontSize="large" />
           </p>
         </button>
       </div>
-      <div className="div7">
+      <div className="div10">
         <p className="large-votes-comments">
           <CommentIcon className="icon" fontSize="large" />
           {` ${comment_count}`}
         </p>
       </div>
-      <div className="div5">
-        <p>{review_body}</p>
-        <p>Votes: {votes + extraVotes}</p>
-      </div>
+
       <div className="div3">
-        <p>Game designer: {designer}</p>
+        <p>{review_body}</p>
+                <p>Votes: {votes + extraVotes}</p>
+
       </div>
       <div className="div4">
+        <h4>Game designer: </h4>
+        <p>{designer}</p>
+      </div>
+      <div className="div5">
+        <h4>Submitted:</h4>
         <p>{Date(created_at).slice(3, 15)}</p>
       </div>
       <div>
