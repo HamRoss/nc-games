@@ -18,3 +18,11 @@ export const fetchCommentsById = async (review_id) => {
   const response = await gamesApi.get(`/reviews/${review_id}/comments`);
   return response.data.comments;
 };
+
+export const patchReviewById = async (review_id, number) => {
+  const response = await gamesApi.patch(`/reviews/${review_id}`, {
+    inc_votes: number,
+  });
+
+  return response.data.review;
+};
