@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Reviews from "./Reviews";
 import SingleReview from "./SingleReview";
-import SingleCategory from "./SingleCategory";
 
 function AppRoutes({ user }) {
   return (
@@ -12,7 +11,7 @@ function AppRoutes({ user }) {
         path="/reviews/:review_id"
         element={<SingleReview user={user} />}
       />
-      <Route path="/categories/:slug/reviews" element={<SingleCategory />} />
+      <Route path="/categories/:slug/reviews" element={<Reviews />} />
     </Routes>
   );
 }
