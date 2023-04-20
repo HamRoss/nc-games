@@ -7,7 +7,6 @@ function AddComment({ user, setComments, setAdditionalCommentCount }) {
   const { review_id } = useParams();
   const [commentSubmitted, setCommentSubmitted] = useState(false);
   const [commentPosted, setCommentPosted] = useState(false);
-
   const [commentBody, setCommentBody] = useState("");
 
   function handleChange(event) {
