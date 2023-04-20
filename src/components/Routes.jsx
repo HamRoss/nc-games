@@ -11,6 +11,7 @@ function AppRoutes({ user }) {
         path="/reviews/:review_id"
         element={<SingleReview user={user} />}
       />
+      <Route path="/categories/:slug/reviews" element={<Reviews />} />
     </Routes>
   );
 }

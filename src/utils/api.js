@@ -4,10 +4,22 @@ const gamesApi = axios.create({
   baseURL: "https://northcoders-backend-project-games-api.onrender.com/api",
 });
 
-export const fetchReviews = async () => {
-  const response = await gamesApi.get("/reviews");
+export const fetchReviews = async (slug, sortBy, order) => {
+  const response = await gamesApi.get("/reviews", {
+    params: { category: slug, sort_by: sortBy, order: order },
+  });
   return response.data.reviews;
 };
+
+export const fetchCategories = async () => {
+  const response = await gamesApi.get("/categories");
+  return response.data.categories;
+};
+
+// export const fetchReviewsByCategory = async (slug) => {
+//   const response = await gamesApi.get(`/reviews?category=${slug}`);
+//   return response.data.reviews;
+// };
 
 export const fetchReviewById = async (review_id) => {
   const response = await gamesApi.get(`/reviews/${review_id}`);
