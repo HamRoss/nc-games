@@ -11,8 +11,8 @@ function ReviewContainer({ reviews, setReviews, isLoading }) {
 
       {reviews.map((review) => {
         return (
-          <Link to={`/reviews/${review.review_id}`}>
-            <SmallReviewCard review={review} />
+          <Link key={review.review_id} to={`/reviews/${review.review_id}`}>
+            <SmallReviewCard review={review} key={review.review_id} />
           </Link>
         );
       })}
