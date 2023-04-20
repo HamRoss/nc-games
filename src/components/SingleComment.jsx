@@ -16,11 +16,21 @@ function SingleComment({ comment }) {
 
   return (
     <section className="single-comment">
-      <p>{body}</p>
-      <h3>{author}</h3>
-      <p>
-        Votes: {votes} Submitted: {formattedDate}
-      </p>
+      <div className="diva">
+        <p>
+          {author} - {formattedDate}
+        </p>
+      </div>
+      <div className="divb">Votes: {votes} </div>
+      <div className="divc">
+        <button className="commentButton">Upvote</button>
+      </div>
+      <div className="divd">
+        <button className="commentButton"> Downvote</button>
+      </div>
+      <div className="dive">
+        <p>{body}</p>
+      </div>
     </section>
   );
 }
