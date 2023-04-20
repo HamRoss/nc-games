@@ -15,7 +15,6 @@
 
 .diva {
   grid-area: 1 / 1 / 2 / 13;
-  text-align: left;
   padding-inline: 20px;
 }
 .divb {

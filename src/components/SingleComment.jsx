@@ -17,17 +17,14 @@ function SingleComment({ comment }) {
   return (
     <section className="single-comment">
       <div className="diva">
-        <p>
-          {author} - {formattedDate}
-        </p>
+        <h3>{author}</h3>
       </div>
-      <div className="divb">Votes: {votes} </div>
+      <div className="divb"> {formattedDate}</div>
       <div className="divc">
-        <button className="commentButton">Upvote</button>
+        Votes: {votes}
+        {/* can insert button here in future */}
       </div>
-      <div className="divd">
-        <button className="commentButton"> Downvote</button>
-      </div>
+      <div className="divd">{/* can insert button here in future */}</div>
       <div className="dive">
         <p>{body}</p>
       </div>
