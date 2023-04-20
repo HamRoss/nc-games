@@ -10,7 +10,6 @@ function AddComment({ user, setComments, setAdditionalCommentCount }) {
   const [commentBody, setCommentBody] = useState("");
 
   function handleChange(event) {
-    event.preventDefault();
     setCommentBody(event.target.value);
   }
 
