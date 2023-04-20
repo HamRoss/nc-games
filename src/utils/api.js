@@ -14,6 +14,11 @@ export const fetchCategories = async () => {
   return response.data.categories;
 };
 
+export const fetchReviewsByCategory = async (slug) => {
+  const response = await gamesApi.get(`/reviews?category=${slug}`);
+  return response.data.reviews;
+};
+
 export const fetchReviewById = async (review_id) => {
   const response = await gamesApi.get(`/reviews/${review_id}`);
   return response.data.review;
