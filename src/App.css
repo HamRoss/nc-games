@@ -1,6 +1,10 @@
-.commentButton {
+.delete-button {
   width: 90%;
   height: auto;
+}
+
+.comment-votes {
+  margin: 13px;
 }
 
 .single-comment {

@@ -25,7 +25,14 @@ function CommentContainer({
             setAdditionalCommentCount={setAdditionalCommentCount}
           />
           {comments.map((comment) => {
-            return <SingleComment key={comment.comment_id} comment={comment} />;
+            return (
+              <SingleComment
+                key={comment.comment_id}
+                comment={comment}
+                user={user}
+                setComments={setComments}
+              />
+            );
           })}
         </div>
       )}

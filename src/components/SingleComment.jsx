@@ -1,9 +1,16 @@
-function SingleComment({ comment }) {
-  const { body, author, votes, created_at } = comment;
+import { useState } from "react";
+import { deleteCommentById } from "../utils/api";
+
+function SingleComment({ comment, user, setComments }) {
+  const { body, author, votes, created_at, comment_id } = comment;
+
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
+
+  const { username } = user;
 
   const dateString = created_at;
   const date = new Date(dateString);
-
   const options = {
     year: "numeric",
     month: "long",
@@ -11,8 +18,25 @@ function SingleComment({ comment }) {
     hour: "numeric",
     minute: "numeric",
   };
-
   const formattedDate = date.toLocaleDateString("en-US", options);
+
+  const handleDelete = () => {
+    setButtonClicked(true);
+    setDeleteLoading(true);
+    deleteCommentById(comment_id).then((response) => {
+      console.log(response);
+      setComments((currentComments) => {
+        setDeleteLoading(false);
+        const commentsCopy = JSON.parse(JSON.stringify(currentComments));
+        const filteredComments = commentsCopy.filter(
+          (comment) => comment.comment_id !== comment_id
+        );
+        console.log("***", filteredComments);
+
+        return filteredComments;
+      });
+    });
+  };
 
   return (
     <section className="single-comment">
@@ -21,10 +45,23 @@ function SingleComment({ comment }) {
       </div>
       <div className="divb"> {formattedDate}</div>
       <div className="divc">
-        Votes: {votes}
-        {/* can insert button here in future */}
+        {username === author ? (
+          <button
+            disabled={buttonClicked}
+            className="delete-button"
+            onClick={handleDelete}
+          >
+            Delete
+          </button>
+        ) : null}
       </div>
-      <div className="divd">{/* can insert button here in future */}</div>
+      <div className="divd">
+        {deleteLoading ? (
+          <p>Deleting...</p>
+        ) : (
+          <p className="comment-votes">Votes: {votes}</p>
+        )}
+      </div>
       <div className="dive">
         <p>{body}</p>
       </div>
