@@ -1,3 +1,21 @@
+.homepage-card {
+  border-radius: 10px;
+  background-color: #e6e0e5;
+  width: 90%;
+  height: auto;
+  margin-inline: 5%;
+}
+
+.homepage-card p {
+  padding: 15px;
+}
+
+.homepage-card h2 {
+  font-size: xx-large;
+  color: #151321;
+  padding: 15px;
+}
+
 .error-panel {
   background-color: #e6e0e5;
   width: 90vw;

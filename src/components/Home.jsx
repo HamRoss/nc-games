@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div>
+    <div className="homepage-card">
       <h2>Welcome to ReviewBG!</h2>
       <h3>
         Find your next favourite game with our community reviews and ratings
