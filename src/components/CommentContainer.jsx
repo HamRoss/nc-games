@@ -8,6 +8,8 @@ function CommentContainer({
   user,
   setComments,
   setAdditionalCommentCount,
+  error,
+  setError,
 }) {
   return (
     <section className="comment-container">
@@ -23,6 +25,8 @@ function CommentContainer({
             user={user}
             setComments={setComments}
             setAdditionalCommentCount={setAdditionalCommentCount}
+            error={error}
+            setError={setError}
           />
           {comments.map((comment) => {
             return <SingleComment key={comment.comment_id} comment={comment} />;
