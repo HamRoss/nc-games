@@ -6,6 +6,7 @@ function SingleComment({ comment, user, setComments }) {
 
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [deleteCommentError, setDeleteCommentError] = useState(null);
 
   const { username } = user;
 
@@ -23,19 +24,25 @@ function SingleComment({ comment, user, setComments }) {
   const handleDelete = () => {
     setButtonClicked(true);
     setDeleteLoading(true);
-    deleteCommentById(comment_id).then((response) => {
-      console.log(response);
-      setComments((currentComments) => {
-        setDeleteLoading(false);
-        const commentsCopy = JSON.parse(JSON.stringify(currentComments));
-        const filteredComments = commentsCopy.filter(
-          (comment) => comment.comment_id !== comment_id
-        );
-        console.log("***", filteredComments);
+    deleteCommentById(comment_id)
+      .then((response) => {
+        console.log(response);
+        setComments((currentComments) => {
+          setDeleteLoading(false);
+          const commentsCopy = JSON.parse(JSON.stringify(currentComments));
+          const filteredComments = commentsCopy.filter(
+            (comment) => comment.comment_id !== comment_id
+          );
 
-        return filteredComments;
+          return filteredComments;
+        });
+      })
+      .catch((err) => {
+        setDeleteLoading(false);
+        setDeleteCommentError(
+          "Couldn't delete comment, please try again later"
+        );
       });
-    });
   };
 
   return (
@@ -65,6 +72,7 @@ function SingleComment({ comment, user, setComments }) {
       <div className="dive">
         <p>{body}</p>
       </div>
+      <div> {deleteCommentError ? <p>{deleteCommentError}</p> : null} </div>
     </section>
   );
 }
