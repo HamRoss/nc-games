@@ -13,8 +13,6 @@ function Nav() {
     });
   }, []);
 
-  console.log(categories);
-
   // https://reactrouter.com/en/main/components/nav-link
 
   return (
