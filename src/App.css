@@ -1,3 +1,7 @@
+.delete-button {
+  width: 90%;
+  height: auto;
+}
 .error-panel {
   background-color: #e6e0e5;
   width: 90vw;
@@ -16,6 +20,10 @@
 .commentButton {
   width: 90%;
   height: auto;
+}
+
+.comment-votes {
+  margin: 13px;
 }
 
 .single-comment {

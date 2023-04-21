@@ -17,8 +17,6 @@ function Reviews({ error, setError }) {
 
   const [params, setParams] = useState({});
 
-  console.log(params);
-
   useEffect(() => {
     setError(null);
 
