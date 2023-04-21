@@ -16,8 +16,6 @@ function Reviews() {
 
   const [params, setParams] = useState({});
 
-  console.log(params);
-
   useEffect(() => {
     fetchReviews(slug, sortBy, order).then((reviews) => {
       setReviews(reviews);
