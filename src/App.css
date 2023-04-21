@@ -2,6 +2,25 @@
   width: 90%;
   height: auto;
 }
+.error-panel {
+  background-color: #e6e0e5;
+  width: 90vw;
+  height: 50vh;
+  font-size: x-large;
+  color: #151321;
+}
+.error-code {
+  margin-block-start: 5vh;
+  margin-block-end: 0px;
+
+  color: #642da8;
+  font-size: 140px;
+}
+
+.commentButton {
+  width: 90%;
+  height: auto;
+}
 
 .comment-votes {
   margin: 13px;
