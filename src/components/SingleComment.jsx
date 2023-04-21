@@ -26,7 +26,6 @@ function SingleComment({ comment, user, setComments }) {
     setDeleteLoading(true);
     deleteCommentById(comment_id)
       .then((response) => {
-        console.log(response);
         setComments((currentComments) => {
           setDeleteLoading(false);
           const commentsCopy = JSON.parse(JSON.stringify(currentComments));
