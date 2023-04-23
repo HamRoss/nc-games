@@ -8,8 +8,6 @@ import { useState } from "react";
 function AppRoutes({ user }) {
   const [error, setError] = useState(null);
 
-  console.log(error);
-
   return (
     <Routes>
       <Route path="/" element={<Home />} />
